@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXO 2</title>
+</head>
+<body>
+    
+    <script>
+        class Enseignant {
+            constructor(identifiant, nom, specialite, adresse) {
+                this.identifiant = identifiant;
+                this.nom = nom;
+                this.specialite = specialite;
+                this.adresse = adresse;
+            }
+        }
+
+        class Professeur extends Enseignant {
+            constructor(identifiant, nom, specialite) {
+                super(identifiant, nom, specialite, null);
+            }
+        }
+
+        let E = new Professeur(500, 'Mimoun', 'informatique');
+
+        console.log("Identifiant:", E.identifiant);
+        console.log("Nom:", E.nom);
+        console.log("Spécialité:", E.specialite);
+
+        class Retraite extends Enseignant {
+            constructor(identifiant, nom, adt) {
+                super(identifiant, nom, null, null);
+                this.adt = adt;
+            }
+
+            calcul() {
+                let currentYear = 2024;
+                return currentYear - this.adt;
+            }
+        }
+
+        let M = new Retraite(700, 'Tahir', 2000);
+
+        console.log("Identifiant est:", M.identifiant);
+        console.log("Nom est:", M.nom);
+        console.log("Nombre d'années de travail est:", M.calcul());
+    </script>
+
+</body>
+</html>

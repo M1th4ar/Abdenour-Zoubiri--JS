@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXO 1 </title>
+</head>
+<body>
+    <p id="result"></p>
+
+
+
+
+    <script type="text/javascript">
+        
+        var n = parseInt(prompt("Entrez le nombre de lettres dans le mot : "));
+        var lettres = [];
+
+        for (var i = 0; i < n; i++) {
+            lettres.push(prompt("Entrez la lettre " + (i + 1) + " : "));
+        }
+
+        var miroir = "";
+        for (var j = lettres.length - 1; j >= 0; j--) {
+            miroir += lettres[j];
+        }
+
+        var isPalindrome = true;
+        for (var k = 0; k < lettres.length / 2; k++) {
+            if (lettres[k] !== miroir[k]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            document.getElementById("result").innerText = "Le mot miroir est : " + miroir + + "." + "\n" + "Le mot est un palindrome";
+            alert("Le mot miroir est : " + miroir + "." + "\n"+ " Le mot est un palindrome");
+        } else {
+            document.getElementById("result").innerText = "Le mot miroir est : " + miroir + + "." +"\n" + "Le mot n'est pas un palindrome";
+            alert("Le mot miroir est : " + miroir + "." + "\n"+ "Le mot n'est pas un palindrome");
+        }
+
+        
+
+    </script>
+</body>
+</html>
